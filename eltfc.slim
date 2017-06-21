@@ -10,7 +10,7 @@ html
       ==File.read(File.expand_path('../eltfc.css', __FILE__))
   body
 
-    - sign = 'Cheatsheet created by Yaroslav Konoplov <eahome00@gmail.com> in 2017. Based on Grammarway 3.'
+    - sign = 'Cheatsheet created by Yaroslav Konoplov <a href="mailto:eahome00@gmail.com">&sol;eahome00@gmail.com&sol;</a> in 2017. Based on Grammarway 3.'
 
     .cheatsheet
       .cheatsheet-header
@@ -73,7 +73,7 @@ html
               ==render 'tenses/future-perfect-continuous'
               hr
       .cheatsheet-footer
-        .text-600=sign
+        .text-600==sign
 
     .cheatsheet.hide-unless-print
       .cheatsheet-header
@@ -92,7 +92,7 @@ html
           ==render 'tenses/past-perfect-continuous'
           hr
       .cheatsheet-footer
-        .text-600=sign
+        .text-600==sign
 
     .cheatsheet.hide-unless-print
       .cheatsheet-header
@@ -111,4 +111,4 @@ html
           ==render 'tenses/future-perfect-continuous'
           hr
       .cheatsheet-footer
-        .text-600=sign
+        .text-600==sign
