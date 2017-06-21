@@ -1,0 +1,141 @@
+@import bower_components/eskimo/typekit
+@import bower_components/eskimo/variables
+@import bower_components/compass-mixins/lib/compass
+@import bower_components/eskimo/mixins/all
+@import bower_components/eskimo/reset/all
+
+html, body
+  font-family: 'Open Sans', sans-serif
+  font-weight: 400
+  font-size:   12px
+  line-height: 1.4
+  color:       $black
+  background:  $white
+  +font-smoothing(antialiased)
+
+=default
+  @media screen, handheld, projection, tv, ttyeen
+    @content
+
+=print
+  @media print
+    @content
+
+.clearfix
+  +clearfix
+
+.pull-left
+  float: left
+
+.pull-right
+  float: right
+
+.cheatsheet
+  &
+    width:    900px
+    margin:   0 auto
+    position: relative
+    padding:  10px
+    +tablet-and-smaller
+      +default
+        width: 100%
+    +print
+      width:            210mm
+      height:           297mm
+      padding:          0
+      page-break-after: always
+  &-header
+    border-bottom: 1px solid $gray
+    margin:        0 0 15px 0
+  &-footer
+    +print
+      position:   absolute
+      bottom:     0
+      left:       0
+      right:      0
+      background: $white
+    +default
+  &-title
+    font-size:      20px
+    font-weight:    800
+    text-transform: uppercase
+  &-columns
+    &
+      +clearfix
+    &-left
+      width:        49.5%
+      margin-right: 0.5%
+      float:        left
+    &-right
+      width:        49.5%
+      margin-left:  0.5%
+      float:        left
+    +tablet-and-smaller
+      +default
+        &-left, &-right
+          width:  100%
+          margin: 0
+          float:  none
+  &-item
+    padding-left:  10px
+    margin-bottom: 4px
+    position:      relative
+    &:before
+      content:     '–'
+      position:    absolute
+      left:        0
+      font-weight: 800
+  &-section
+    color: inherit
+    page-break-inside: avoid
+    &-title
+      display:        inline-block
+      font-weight:    700
+      font-size:      18px
+      padding:        4px 10px
+      color:          #333
+      text-transform: uppercase
+      margin-bottom:  4px
+      &.-present-tense
+        background: #b3f9b1
+      &.-past-tense
+        background: #acd5ea
+      &.-future-tense
+        background: #ffafcf
+
+hr
+  margin: 10px auto 15px auto
+  width:  calc(100% - 10px - 10px)
+
+.text
+  &-300
+    font-weight: 300
+  &-600
+    font-weight: 600
+  &-italic
+    font-style: italic
+  &-muted
+    color: #bdbdbd
+
+td
+  padding-right: 4px
+  &:last-child
+    padding-right: 0
+
+.hide-if-pc
+  +pc
+    +default
+      display: none !important
+
+.hide-if-handheld
+  +tablet-and-smaller
+    +default
+      display: none !important
+
+.hide-if-print
+  +print
+    display: none !important
+
+.hide-unless-print
+  +default
+    display: none !important

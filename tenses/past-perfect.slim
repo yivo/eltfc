@@ -1,0 +1,8 @@
+.cheatsheet-section
+  .cheatsheet-section-content
+    .cheatsheet-section-title.-past-tense Past Perfect
+    .cheatsheet-section-body
+      - Faker::Lorem.sentences(rand(10..20)).in_groups_of 2, false do |group|
+        .cheatsheet-item
+          .text-600=group[0].downcase.gsub(/\.+\z/, '')
+          .text-italic.text-muted=group[1]
